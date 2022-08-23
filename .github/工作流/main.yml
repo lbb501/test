@@ -1,5 +1,6 @@
 name: morning
 on:
+  push:
   schedule:
   - cron:  '55 2 * * *'
   workflow_dispatch:
