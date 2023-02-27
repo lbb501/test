@@ -21,8 +21,8 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   url = "http://apis.juhe.cn/simpleWeather/query?key=bb4cbce2f1ba726e4d43eea9cd07ea40&city=" + city
   res = requests.get(url).json()
-  weather = res['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp'])
+  weather = res['result'][0]
+  return weather['weather'], math.floor(weather['temperature'])
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
